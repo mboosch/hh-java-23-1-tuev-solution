@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarInspektionServiceTest {
     private final CarInspektionService carInspektionService = new CarInspektionService();
+
     @Test
     void checkTiresWith4TiresShouldReturnTrue() {
         //GIVEN
@@ -16,6 +17,7 @@ class CarInspektionServiceTest {
         //THEN
         assertEquals(expected, actual);
     }
+
     @Test
     void checkTiresWith3TiresShouldReturnFalse() {
         //GIVEN
@@ -37,6 +39,7 @@ class CarInspektionServiceTest {
         //THEN
         assertEquals(expected, actual);
     }
+
     @Test
     void checkSeatBeltWithNoSeatBeltShouldReturnFalse() {
         //GIVEN
@@ -50,46 +53,48 @@ class CarInspektionServiceTest {
 
     @Test
     void checkAirbagWithExistingAirbagShouldReturnTrue0() {
-    //GIVEN
-    boolean airbag = true;
-    //WHEN
-    boolean actual = carInspektionService.checkAirbag(airbag);
-    boolean expected = true;
-    //THEN
-    assertEquals(expected, actual);
+        //GIVEN
+        boolean airbag = true;
+        //WHEN
+        boolean actual = carInspektionService.checkAirbag(airbag);
+        boolean expected = true;
+        //THEN
+        assertEquals(expected, actual);
     }
 
     @Test
     void checkAirbagWithNoAirbagShouldReturnFalse() {
-    //GIVEN
-    boolean airbag = false;
-    //WHEN
-    boolean actual = carInspektionService.checkAirbag(airbag);
-    boolean expected = false;
-    //THEN
-    assertEquals(expected, actual);
+        //GIVEN
+        boolean airbag = false;
+        //WHEN
+        boolean actual = carInspektionService.checkAirbag(airbag);
+        boolean expected = false;
+        //THEN
+        assertEquals(expected, actual);
     }
 
     @Test
     void checkDoorsWith3DoorsShouldReturnTrue() {
-    //GIVEN
-    int numberOfDoors = 3;
-    //WHEN
-    boolean actual = carInspektionService.checkDoors(numberOfDoors);
-    boolean expected = true;
-    //THEN
-    assertEquals(expected, actual);
+        //GIVEN
+        int numberOfDoors = 3;
+        //WHEN
+        boolean actual = carInspektionService.checkDoors(numberOfDoors);
+        boolean expected = true;
+        //THEN
+        assertEquals(expected, actual);
     }
+
     @Test
     void checkDoorsWith5DoorsShouldReturnTrue() {
-    //GIVEN
-    int numberOfDoors = 5;
-    //WHEN
-    boolean actual = carInspektionService.checkDoors(numberOfDoors);
-    boolean expected = true;
-    //THEN
-    assertEquals(expected, actual);
+        //GIVEN
+        int numberOfDoors = 5;
+        //WHEN
+        boolean actual = carInspektionService.checkDoors(numberOfDoors);
+        boolean expected = true;
+        //THEN
+        assertEquals(expected, actual);
     }
+
     @Test
     void checkDoorsWith4DoorsShouldReturnFalse() {
         //GIVEN
@@ -112,6 +117,7 @@ class CarInspektionServiceTest {
         //THEN
         assertEquals(expected, actual);
     }
+
     @Test
     void checkCarWithInvalidCarShouldReturnFalse() {
         //GIVEN
