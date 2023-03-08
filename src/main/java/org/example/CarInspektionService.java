@@ -2,24 +2,24 @@ package org.example;
 
 public class CarInspektionService {
 
-    public boolean checkTires(int numberOfTires) {
-        return numberOfTires == 4;
+    public boolean checkTires(Car carToCheck) {
+        return carToCheck.numberOfTires == 4;
     }
 
-    public boolean checkSeatBelt(boolean seatBelt) {
-        return seatBelt;
+    public boolean checkSeatBelt(Car carToCheck) {
+        return carToCheck.seatBelt;
     }
 
-    public boolean checkAirbag(boolean airbag) {
-        return airbag;
+    public boolean checkAirbag(Car carToCheck) {
+        return carToCheck.airbag;
     }
 
-    public boolean checkDoors(int numberOfDoors) {
-        return numberOfDoors == 3 || numberOfDoors == 5;
+    public boolean checkDoors(Car carToCheck) {
+        return carToCheck.numberOfDoors == 3 || carToCheck.numberOfDoors == 5;
     }
 
     public boolean checkCar(Car car) {
-        return checkTires(car.getNumberOfTires()) && checkSeatBelt(car.isSeatBelt()) && checkAirbag(car.isAirbag()) && checkDoors(car.getNumberOfDoors());
+        return checkTires(car) && checkSeatBelt(car) && checkAirbag(car) && checkDoors(car);
     }
 
 

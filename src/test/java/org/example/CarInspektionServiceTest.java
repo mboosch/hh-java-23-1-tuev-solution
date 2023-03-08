@@ -10,9 +10,10 @@ class CarInspektionServiceTest {
     @Test
     void checkTiresWith4TiresShouldReturnTrue() {
         //GIVEN
-        int numberOfTires = 4;
+        Car testCar = new Car(4, 4, true, true);
+
         //WHEN
-        boolean actual = carInspektionService.checkTires(numberOfTires);
+        boolean actual = carInspektionService.checkTires(testCar);
         boolean expected = true;
         //THEN
         assertEquals(expected, actual);
@@ -21,9 +22,9 @@ class CarInspektionServiceTest {
     @Test
     void checkTiresWith3TiresShouldReturnFalse() {
         //GIVEN
-        int numberOfTires = 3;
+        Car testCar = new Car(3, 4, true, true);
         //WHEN
-        boolean actual = carInspektionService.checkTires(numberOfTires);
+        boolean actual = carInspektionService.checkTires(testCar);
         boolean expected = false;
         //THEN
         assertEquals(expected, actual);
@@ -32,9 +33,9 @@ class CarInspektionServiceTest {
     @Test
     void checkSeatBeltWithAnExistingSeatBeltShouldReturnTrue() {
         //GIVEN
-        boolean seatBelt = true;
+        Car testCar = new Car(4, 4, true, true);
         //WHEN
-        boolean actual = carInspektionService.checkSeatBelt(seatBelt);
+        boolean actual = carInspektionService.checkSeatBelt(testCar);
         boolean expected = true;
         //THEN
         assertEquals(expected, actual);
@@ -43,9 +44,9 @@ class CarInspektionServiceTest {
     @Test
     void checkSeatBeltWithNoSeatBeltShouldReturnFalse() {
         //GIVEN
-        boolean seatBelt = false;
+        Car testCar = new Car(4, 4, false, true);
         //WHEN
-        boolean actual = carInspektionService.checkSeatBelt(seatBelt);
+        boolean actual = carInspektionService.checkSeatBelt(testCar);
         boolean expected = false;
         //THEN
         assertEquals(expected, actual);
@@ -54,9 +55,9 @@ class CarInspektionServiceTest {
     @Test
     void checkAirbagWithExistingAirbagShouldReturnTrue0() {
         //GIVEN
-        boolean airbag = true;
+        Car testCar = new Car(4, 4, false, true);
         //WHEN
-        boolean actual = carInspektionService.checkAirbag(airbag);
+        boolean actual = carInspektionService.checkAirbag(testCar);
         boolean expected = true;
         //THEN
         assertEquals(expected, actual);
@@ -65,9 +66,9 @@ class CarInspektionServiceTest {
     @Test
     void checkAirbagWithNoAirbagShouldReturnFalse() {
         //GIVEN
-        boolean airbag = false;
+        Car testCar = new Car(4, 4, false, false);
         //WHEN
-        boolean actual = carInspektionService.checkAirbag(airbag);
+        boolean actual = carInspektionService.checkAirbag(testCar);
         boolean expected = false;
         //THEN
         assertEquals(expected, actual);
@@ -76,9 +77,9 @@ class CarInspektionServiceTest {
     @Test
     void checkDoorsWith3DoorsShouldReturnTrue() {
         //GIVEN
-        int numberOfDoors = 3;
+        Car testCar = new Car(4, 3, false, false);
         //WHEN
-        boolean actual = carInspektionService.checkDoors(numberOfDoors);
+        boolean actual = carInspektionService.checkDoors(testCar);
         boolean expected = true;
         //THEN
         assertEquals(expected, actual);
@@ -87,9 +88,9 @@ class CarInspektionServiceTest {
     @Test
     void checkDoorsWith5DoorsShouldReturnTrue() {
         //GIVEN
-        int numberOfDoors = 5;
+        Car testCar = new Car(4, 5, false, false);
         //WHEN
-        boolean actual = carInspektionService.checkDoors(numberOfDoors);
+        boolean actual = carInspektionService.checkDoors(testCar);
         boolean expected = true;
         //THEN
         assertEquals(expected, actual);
@@ -98,9 +99,9 @@ class CarInspektionServiceTest {
     @Test
     void checkDoorsWith4DoorsShouldReturnFalse() {
         //GIVEN
-        int numberOfDoors = 4;
+        Car testCar = new Car(4, 4, false, false);
         //WHEN
-        boolean actual = carInspektionService.checkDoors(numberOfDoors);
+        boolean actual = carInspektionService.checkDoors(testCar);
         boolean expected = false;
         //THEN
         assertEquals(expected, actual);
